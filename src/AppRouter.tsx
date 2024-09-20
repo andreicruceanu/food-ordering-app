@@ -6,6 +6,7 @@ import UserProfilePage from "./pages/UserProfilePage";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import ManageRestaurantPage from "./pages/ManageRestaurantPage";
 import SearchPage from "./pages/SearchPage";
+import DetailPage from "./pages/DetailPage";
 
 const AppRouter = () => {
   return (
@@ -36,6 +37,14 @@ const AppRouter = () => {
           }
         />
       </Route>
+      <Route
+        path="/detail/:restaurantId"
+        element={
+          <Layout showHero={false}>
+            <DetailPage />
+          </Layout>
+        }
+      />
       <Route path="*" element={<Navigate to="/" />} />
       <Route path="/auth-callback" element={<AuhCallbackPage />} />
       <Route
